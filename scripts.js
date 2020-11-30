@@ -28,13 +28,13 @@ function init(){
    
 
     let leftButton = document.getElementById("left");
-    left.addEventListener("click", function(){
+    leftButton.addEventListener("click", function(){
         movement = parseInt(imjObj.style.left)-10+'px';
         imjObj.style.left=movement;
     });
 
     let downButton= document.getElementById("down");
-    down.addEventListener("click",function(){
+    downButton.addEventListener("click",function(){
         movement=parseInt(imjObj.style.bottom)-10+'px';
         imjObj.style.bottom=movement;
         shuttleheight.innerHTML=parseInt(shuttleheight.innerHTML)-10000;
