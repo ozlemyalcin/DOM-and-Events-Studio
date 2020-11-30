@@ -13,37 +13,43 @@ function init(){
     missionAbort.addEventListener("click",handleMissionAbort);
 
     let imjObj=document.getElementById('rocket');
-    imjObj.style.position='relative';
+    imjObj.style.position='absolute';
     imjObj.style.left='0px';
     imjObj.style.bottom='0px';
 
-    let right = document.getElementById('right');
-    right.addEventListener("click",function(){
-        movement=parseInt(imjObj.style.left)+10+'px';
+    let rightButton = document.getElementById('right');
+    rightButton.onclick=rightHandler;
+    function rightHandler(){
+        let imjObj=document.getElementById("rocket");
+        let movement=parseInt(imjObj.style.left)+10+'px';
         imjObj.style.left=movement;
 
-    });
+    }
+   
 
-    let left = document.getElementById("left");
+    let leftButton = document.getElementById("left");
     left.addEventListener("click", function(){
         movement = parseInt(imjObj.style.left)-10+'px';
         imjObj.style.left=movement;
     });
 
-    let down = document.getElementById("down");
+    let downButton= document.getElementById("down");
     down.addEventListener("click",function(){
         movement=parseInt(imjObj.style.bottom)-10+'px';
         imjObj.style.bottom=movement;
         shuttleheight.innerHTML=parseInt(shuttleheight.innerHTML)-10000;
     });
 
-    let up= document.getElementById("up");
-    up.addEventListener("click", function(){
-        movement=parseInt(imjObj.style.bottom)+10+'px';
+    let upButton= document.getElementById("up");
+    upButton.onclick=upHandler;
+    function upHandler(){
+        let imjObj=document.getElementById("rocket");
+        let movement=parseInt(imjObj.style.bottom)+10+'px';
         imjObj.style.bottom=movement;
         shuttleheight.innerHTML=parseInt(shuttleheight.innerHTML)+10000;
+    }
 
-    });
+   
 
 
     function handleTakeoffButton(){
